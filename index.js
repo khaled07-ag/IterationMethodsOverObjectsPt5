@@ -135,7 +135,7 @@ const channels = [
 
    function channelHasVideo(videoTitle, channel) {
     // Your code here
-    let result = channel.videos;
+    
     let match = channel.videos.some((video)=>{
         if(video.title==videoTitle){
             return true
