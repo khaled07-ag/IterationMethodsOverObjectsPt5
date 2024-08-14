@@ -137,7 +137,7 @@ const channels = [
     // Your code here
     let result = channel.videos;
     let match = channel.videos.some((video)=>{
-        if(result==video.videos){
+        if(video.title==videoTitle){
             return true
         }else{
             return false
@@ -149,16 +149,33 @@ const channels = [
   console.log(channelHasVideo("The Universal S", channels[0]));
   console.log(channelHasVideo("The Universal S", channels[1]));
 
+  function getChannelByName(channelName, channels) {
+    // Your code here
+    let channelFound = channels.find((channel)=>{
+      if(channel.name==channelName){
+        return true
+      }else{
+        return false
+      }
+    })
+    return channelFound
+  }
+   console.log(getChannelByName("PowerfulJRE", channels))
+
 function getChannelByVideoTitle(videoTitle, channels) {
     // Your code here
-    for (let index = 0; index < channels.length; index++) {
-        if (channels[index].video.includes(videoTitle)){
-            return channels.name
+    let channelFound = channels.find((channel)=>{
+      return channel.videos.some((video)=>{
+        if(video.title==videoTitle){
+          return true
+        }else{
+          return false
         }
-        
-    }
+      })
+    })
+    return channelFound
   }
-  //console.log(getChannelByVideoTitle("The Universal S", channels));
+  console.log(getChannelByVideoTitle("The Universal S", channels));
 function searchChannels(query, channels) {
     
     
@@ -171,5 +188,5 @@ function searchChannels(query, channels) {
     })
             
   }
-   //console.log(searchChannels("the", channels))
+   console.log(searchChannels("the", channels))
   
