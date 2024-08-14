@@ -189,4 +189,24 @@ function searchChannels(query, channels) {
             
   }
    console.log(searchChannels("the", channels))
-  
+  //Bonus
+  function totalVideosDuration(channel) {
+    // Your code here
+    
+    
+    return channel.videos.forEach((video) => {
+       // return video.duration.reduce((num1 ,num2)=>{num1+num2,totalDuration})
+         // totalDuration=video.duration+totalDuration
+         // return totalDuration
+      let dur=0
+      let totalDuration= video.duration.reduce((total,num)=>{
+
+        total+num,dur
+        return totalDuration
+      })
+      
+    });
+    
+  }
+console.log(totalVideosDuration(channels[1]));
+
